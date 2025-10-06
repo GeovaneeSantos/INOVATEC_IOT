@@ -47,7 +47,7 @@ Antes de compilar e fazer o *upload* do código, atualize as seguintes constante
 
 ### 1. Conversão de Unidades de Engenharia (UE) - Incluindo a Soma da Mínima da Saída
 
-As funções de cálculo (`calcularCorrente`, `calcularVazao`, `calcularPressao`) implementam a interpolação linear, essencial para mapear o valor digital (ADC) para a escala real do sensor (UE).
+As funções de cálculo (`calcularCorrente`, `calcularVazao`, `calcularPressao`) implementam a **interpolação linear**, essencial para mapear o valor digital (ADC) para a escala real do sensor (UE).
 
 O cálculo agora adiciona a **Mínima da Saída** ($\mathbf{UE_{\text{mín}}}$), garantindo que a escala comece no valor mínimo configurado, o que é fundamental para sensores com *offset* ou calibração de zero.
 
@@ -58,6 +58,7 @@ O cálculo agora adiciona a **Mínima da Saída** ($\mathbf{UE_{\text{mín}}}$),
 | **Pressão** | $\text{UE} = \left(\frac{\text{pressao\_max} - \text{pressao\_min}}{\text{canal\_max} - \text{canal\_min}}\right) \times \text{valor\_adc} \mathbf{+ \text{pressao\_min}}$ | `pressao_min` (Valor atual: 0.0) |
 
 ***
+
 
 ### 2. Leitura de Entradas Digitais
 
