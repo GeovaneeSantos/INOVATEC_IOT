@@ -1,0 +1,2 @@
+node-red-node-mysql 2.0.0
+node-red-dashboard 3.6.6
