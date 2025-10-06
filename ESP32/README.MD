@@ -59,7 +59,6 @@ O cálculo agora adiciona a **Mínima da Saída** ($\mathbf{UE_{\text{mín}}}$),
 
 ***
 
-
 ### 2. Leitura de Entradas Digitais
 
 O código lê o estado dos pinos de entrada digital (DI0 a DI5) e inverte a lógica (`1` = `false`, `0` = `true`) antes de armazenar os valores nas variáveis booleanas que serão publicadas.
