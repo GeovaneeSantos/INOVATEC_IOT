@@ -1,4 +1,4 @@
-# ⚙️ Código Fonte: Monitoramento IoT Industrial - NORVI GSM AE04 L (ESP32)
+# Código Fonte: Monitoramento IoT Industrial - NORVI GSM AE04 L (ESP32)
 
 ---
 
@@ -11,7 +11,7 @@ Este documento descreve o código-fonte C++ desenvolvido para o microcontrolador
 5. Montar uma mensagem **JSON** com todos os dados.
 6. Publicar a mensagem em um tópico MQTT.
 
-## 🌟 Visão Geral do Hardware e Software
+## Visão Geral do Hardware e Software
 
 | Componente | Função | Detalhes no Código |
 | :--- | :--- | :--- |
@@ -20,7 +20,7 @@ Este documento descreve o código-fonte C++ desenvolvido para o microcontrolador
 | **Entradas Digitais (DI0-DI5)** | Leitura de sensores digitais (e.g., status de chave/relé). | Pinos 27, 34, 35, 14, 13, 5. |
 | **Protocolo** | **MQTT** | Broker: `test.mosquitto.org`, Tópico: `texto_norvi_wifi`. |
 
-## 🛠️ Instalação e Configuração
+## Instalação e Configuração
 
 ### Pré-requisitos (Bibliotecas)
 
@@ -43,7 +43,7 @@ Antes de compilar e fazer o *upload* do código, atualize as seguintes constante
 
 ---
 
-## 🔌 Detalhes do Código
+## Detalhes do Código
 
 ### 1. Conversão de Unidades de Engenharia (UE) - Cálculo Geral
 
