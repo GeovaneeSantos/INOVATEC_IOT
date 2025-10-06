@@ -45,17 +45,21 @@ Antes de compilar e fazer o *upload* do código, atualize as seguintes constante
 
 ## 🔌 Detalhes do Código
 
-### 1. Conversão de Unidades de Engenharia (UE) - Incluindo a Soma da Mínima da Saída
+### 1. Conversão de Unidades de Engenharia (UE) - Cálculo Geral
 
-As funções de cálculo (`calcularCorrente`, `calcularVazao`, `calcularPressao`) implementam a **interpolação linear**, essencial para mapear o valor digital (ADC) para a escala real do sensor (UE).
+As leituras analógicas de Corrente, Vazão e Pressão são convertidas para Unidades de Engenharia (UE) usando uma única função genérica baseada na **interpolação linear**.
 
-O cálculo agora adiciona a **Mínima da Saída** ($\mathbf{UE_{\text{mín}}}$), garantindo que a escala comece no valor mínimo configurado, o que é fundamental para sensores com *offset* ou calibração de zero.
+O cálculo incorpora a **Mínima da Saída** ($\mathbf{UE_{\text{mín}}}$) para garantir que a escala comece no valor mínimo configurado pelo sensor (o *offset* de zero).
 
-| Medição | Fórmula (Interpolação Linear) | Variável Mínima da Saída (`MIN_SAIDA`) |
+| Variável | Mínima (UE$_{\text{mín}}$) | Máxima (UE$_{\text{máx}}$) |
 | :--- | :--- | :--- |
-| **Corrente** | $\text{UE} = \left(\frac{\text{corrente\_max} - \text{corrente\_min}}{\text{canal\_max} - \text{canal\_min}}\right) \times \text{valor\_adc} \mathbf{+ \text{corrente\_min}}$ | `corrente_min` (Valor atual: 0.0) |
-| **Vazão** | $\text{UE} = \left(\frac{\text{vazao\_max} - \text{vazao\_min}}{\text{canal\_max} - \text{canal\_min}}\right) \times \text{valor\_adc} \mathbf{+ \text{vazao\_min}}$ | `vazao_min` (Valor atual: 0.0) |
-| **Pressão** | $\text{UE} = \left(\frac{\text{pressao\_max} - \text{pressao\_min}}{\text{canal\_max} - \text{canal\_min}}\right) \times \text{valor\_adc} \mathbf{+ \text{pressao\_min}}$ | `pressao_min` (Valor atual: 0.0) |
+| **Corrente** | 0.0 Amperes | 150.0 Amperes |
+| **Vazão** | 0.0 $\text{m}^3/\text{h}$ | 1000.0 $\text{m}^3/\text{h}$ |
+| **Pressão** | 0.0 bar | 150.0 bar |
+
+**Fórmula Geral (Função `calcularUE` no C++):**
+
+$$\text{Valor UE} = \left(\frac{UE_{\text{máx}} - UE_{\text{mín}}}{\text{Canal}_{\text{máx}} - \text{Canal}_{\text{mín}}}\right) \times \text{Valor ADC} \mathbf{+ UE_{\text{mín}}}$$
 
 ***
 
