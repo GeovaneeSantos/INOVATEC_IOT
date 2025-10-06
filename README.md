@@ -4,7 +4,7 @@
 
 Este repositório contém o fluxo do **Node-RED** para as ferramentas de monitoramento de dados analógicos e digitais do dispositivo **NORVI GSM AE04 L**. O sistema coleta leituras em tempo real por meio do protocolo **MQTT**, processa os dados de sensores de Corrente, Pressão e Vazão, e armazena em um banco de dados **MySQL** para posterior visualização e análise.
 
-## 🌟 Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O projeto é baseado na seguinte arquitetura de IoT:
 
@@ -25,7 +25,7 @@ O projeto é baseado na seguinte arquitetura de IoT:
 
 ---
 
-## 🛠️ Instalação e Configuração
+## Instalação e Configuração
 
 ### Pré-requisitos
 
@@ -53,7 +53,7 @@ A conexão `MySQLdatabase` está configurada como `INOVATEC_IOT` e as *queries* 
 
 ---
 
-## 📄 Arquivos JSON de Configuração
+## Arquivos JSON de Configuração
 
 Arquivos JSON de configuração estão disponíveis neste repositório. Eles são cruciais para a inicialização e o teste do ambiente.
 
@@ -66,7 +66,7 @@ Estes arquivos servem primariamente para criar o ambiente sem a necessidade de f
 
 ---
 
-## 🔌 Detalhes do Fluxo
+## Detalhes do Fluxo
 
 O fluxo principal (`a5975144ae9a0dd0` - **"Fluxo 1"**) orquestra a coleta de dados:
 
